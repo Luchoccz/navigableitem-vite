@@ -1,15 +1,28 @@
 {
   "name": "navigableitem-vite",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "main": "./dist/App.umd.js",
-  "module": "./dist/App.es.jsç",
+  "module": "./dist/App.es.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Luchoccz/navigableitem-vite.git"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/App.es.js",
+      "require": "./dist/App.umd.js"
+    }
+  },
+  "keywords": ["react", "component"],
+  "author": "Luis Colmenares",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepublish": "rm -rf ./dist && npm run build"
   },
   "dependencies": {
     "react": "^19.1.0",

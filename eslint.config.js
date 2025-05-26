@@ -29,5 +29,13 @@ export default [
         { allowConstantExport: true },
       ],
     },
+    build: {
+      lib: {
+        entry: path.resolve(__dirname, "src/index.tsx"),
+        name,
+        formats: ["es", "umd"],
+        fileName: (format) => `App.${format}.jsx`,
+      }
+    },
   },
 ]
